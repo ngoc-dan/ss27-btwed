@@ -1,24 +1,27 @@
-let array = []
-let size = +prompt("nhap kinh thuoc mang")
-let n = +prompt("kích thước mảng con")
-function check(arr, n) {
-    let divideArayy = (arr, n)
-    let myArr = []
-    for (let i = 0; i < arr.length; i += n) {
-        
-    }
-}
-if (n > 0) {
-    for (let i = 0; i < n; i++) {
-        let newElement = +prompt("Mời bạn nhập phần tử muốn thêm vào mảng")
-        if (Number.isInteger(newElement)) {
-            array.push(newElement);
-        } else {
-            e
-            alert("du lieu khong hop le")
-            i--
+let arr = [];
+let n = +prompt("Mời bạn nhập kích thước của mảng:");
+if(!Number.isInteger(n) || n<1 || isNaN(n)){
+    alert("Không hợp lệ");
+}else{
+    for(let i = 0 ; i < n ; i++){
+        let number = +prompt(`Nhập phần tử thứ ${i + 1}`);
+        if(!isNaN(arr[i])){
+            alert("Không hợp lệ")
+        }else{
+            arr.push(number);
         }
     }
-    alert(check(array, n))
+    let a = +prompt("Nhập số phần tử của mảng con:");
+    if(!Number.isInteger(a) || a < 1 || isNaN(a)){
+        alert("Không hợp lệ");
+    }else if(a>n){
+        alert("Không hợp lệ");
+    }else{
+        let str = [];
+        for(let i=0 ;i<arr.length ; i += a){
+            str.push(arr.slice(i , i + a));
+        }
+        console.log("Mảng sau khi chia là:" ,str);
+    }
 }
 
